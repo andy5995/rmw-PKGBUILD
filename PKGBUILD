@@ -2,7 +2,7 @@
 # Contributor: Oliver Jaksch <arch-aur at com-in dot de>
 
 pkgname=rmw
-pkgver=0.9.2
+pkgver=0.9.3
 pkgrel=1
 pkgdesc="trash/recycle bin utility for the command line"
 arch=('i686' 'x86_64' 'aarch64')
@@ -13,11 +13,15 @@ makedepends=('meson' 'ninja')
 optdepends=('gettext' 'canfigger')
 
 source=("https://github.com/theimpossibleastronaut/rmw/releases/download/v${pkgver}/${pkgname}-${pkgver}.tar.xz")
-sha256sums=('f1a7003f920297b0d1904c7c79debc06fbb00e1ef62871615a4fe836715a889d')
+sha256sums=('a7215af12694d50282e4cfb9b9062fb7806bde8770d61a2a0cd8260e28db2749')
 
 build() {
   arch-meson $pkgname-$pkgver build -Db_sanitize=none
   meson compile -v -C build
+}
+
+check() {
+  meson test -C build
 }
 
 package() {
