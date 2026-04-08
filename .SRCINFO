@@ -5,7 +5,6 @@ pkgbase = rmw
 	url = https://theimpossibleastronaut.com/rmw-website/
 	arch = x86_64
 	license = GPL-3.0-or-later
-	makedepends = git
 	makedepends = meson
 	makedepends = ninja
 	depends = glibc

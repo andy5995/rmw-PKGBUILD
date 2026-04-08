@@ -14,7 +14,6 @@ depends=(
 )
 optdepends=('canfigger: use system-installed version')
 makedepends=(
-  'git'
   'meson'
   'ninja'
 )
